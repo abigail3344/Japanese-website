@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>日本生活导航 | Japan Life Navigator | 日本生活ナビ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            padding: 20px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+        }
+
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-list li {
+            margin-bottom: 12px;
+        }
+
+        .link-list a {
+            color: #06c;
+            text-decoration: none;
+            font-size: 16px;
+            display: block;
+            padding: 8px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .link-list a:hover {
+            background-color: #f5f5f7;
+        }
+
+        .language-switcher {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .language-btn {
+            background: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 0 8px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn.active {
+            background: #06c;
+            color: white;
+        }
+
+        .language-btn:hover {
+            background: #0056b3;
+            color: white;
+        }
+
+        [lang] {
+            display: none;
+        }
+
+        [lang].active {
+            display: block;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-switcher">
+            <button class="language-btn active" onclick="switchLanguage('zh')">中文</button>
+            <button class="language-btn" onclick="switchLanguage('en')">English</button>
+            <button class="language-btn" onclick="switchLanguage('ja')">日本語</button>
+        </div>
+
+        <div class="content-zh active" lang="zh">
+            <header class="header">
+                <h1>日本生活导航</h1>
+                <p>一站式日本生活服务导航平台</p>
+            </header>
+
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="搜索网站...">
+            </div>
+
+            <div class="category-grid">
+                <!-- 官方信息 -->
+                <div class="category-card">
+                    <h2 class="category-title">🏛️ 日本官方网站</h2>
+                    <ul class="link-list">
+                        <li><a href="https://www.cn.emb-japan.go.jp/itprtop_zh/index.html">日本国驻华大使馆</a></li>
+                        <li><a href="https://www.moj.go.jp/isa/">出入国在留管理厅</a></li>
+                        <li><a href="https://www.kantei.go.jp/">首相官邸</a></li>
+                        <li><a href="https://www.mofa.go.jp/">外务省</a></li>
+                        <li><a href="https://www.studyinjapan.go.jp/en/">Study in Japan</a></li>
+                        <li><a href="https://portal.jp-mirai.org/zh">JP-MIRAI Portal</a></li>
+                        <li><a href="https://www.japan.go.jp/">日本政府官网</a></li>
+                    </ul>
+                </div>
+
+                <!-- 旅游资讯 -->
+                <div class="category-card">
+                    <h2 class="category-title">🗺️ 旅游资讯官方网站</h2>
+                    <ul class="link-list">
+                        <li><a href="https://www.gotokyo.org/cn/index.html">东京旅游官网GO TOKYO</a></li>
+                        <li><a href="https://www.japan-travel.cn/">日本国家旅游局(JNTO)</a></li>
+                    </ul>
+                </div>
+
+                <!-- 二手奢侈品 -->
+                <div class="category-card">
+                    <h2 class="category-title">👜 二手奢侈品</h2>
+                    <ul class="link-list">
+                        <li><a href="https://www.daikokuya78.com/">大黒屋</a></li>
+                        <li><a href="https://www.brandoff-store.com/">BRANDOFF</a></li>
+                        <li><a href="https://komehyo.jp/">KOMEHYO</a></li>
+                        <li><a href="https://www.qoo-online.com/">VINTAGE QOO</a></li>
+                        <li><a href="https://amorevintagejapan.com/">AMORE Vintage</a></li>
+                        <li><a href="https://www.kame-kichi.com/">かめ吉</a></li>
+                        <li><a href="https://www.eco-ring.com/">エコリング</a></li>
+                    </ul>
+                </div>
+
+                <!-- 二手交易平台 -->
+                <div class="category-card">
+                    <h2 class="category-title">🛍️ 二手交易平台</h2>
+                    <ul class="link-list">
+                        <li><a href="https://jp.mercari.com/">メルカリ</a></li>
+                        <li><a href="https://auctions.yahoo.co.jp/">Yahoo!オークション</a></li>
+                        <li><a href="https://ekizo.mandarake.co.jp/">まんだらけ</a></li>
+                        <li><a href="https://vector-park.jp/">ベクトルパーク</a></li>
+                        <li><a href="https://www.hmv.co.jp/used/">HMV</a></li>
+                        <li><a href="https://ec.geo-online.co.jp/shop/">GEO</a></li>
+                        <li><a href="https://shopping.bookoff.co.jp/">ブックオフ</a></li>
+                        <li><a href="https://www.netoff.co.jp/">ネットオフ</a></li>
+                        <li><a href="https://www.2ndstreet.jp/">セカンドストリート</a></li>
+                        <li><a href="https://auction.brandear.jp/">ブランディア</a></li>
+                    </ul>
+                </div>
+
+                <!-- 美食餐厅 -->
+                <div class="category-card">
+                    <h2 class="category-title">🍱 美食餐厅</h2>
+                    <ul class="link-list">
+                        <li><a href="https://tabelog.com/cn/">Tabelog</a></li>
+                        <li><a href="https://myconciergejapan.com/zh-hans/">日本米其林餐厅预约</a></li>
+                        <li><a href="https://gurunavi.com/zh-hans">Gurunavi</a></li>
+                    </ul>
+                </div>
+
+                <!-- 住宿预订 -->
+                <div class="category-card">
+                    <h2 class="category-title">🏨 酒店民宿短租</h2>
+                    <ul class="link-list">
+                        <li><a href="https://zh.airbnb.com/">Airbnb</a></li>
+                        <li><a href="https://www.booking.com/index.zh-cn.html">Booking.com</a></li>
+                        <li><a href="https://www.goodrooms.jp/">Goodrooms</a></li>
+                        <li><a href="https://www.jp-guesthouse.com/">Japan Guesthouse</a></li>
+                    </ul>
+                </div>
+
+                <!-- 租房买房 -->
+                <div class="category-card">
+                    <h2 class="category-title">🏢 租房买房</h2>
+                    <ul class="link-list">
+                        <li><a href="https://suumo.jp/">SUUMO</a></li>
+                        <li><a href="https://home.yolo-japan.com/ja">YOLO JAPAN</a></li>
+                        <li><a href="https://www.oakhouse.jp/">Oak House</a></li>
+                        <li><a href="https://realestate.co.jp/ja">Real Estate Japan</a></li>
+                        <li><a href="https://www.athome.co.jp/">At Home</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 英文版内容 -->
+        <div class="content-en" lang="en">
+            <header class="header">
+                <h1>Japan Life Navigator</h1>
+                <p>One-stop Japan Life Service Navigation Platform</p>
+            </header>
+            <!-- 英文版内容待补充 -->
+        </div>
+
+        <!-- 日文版内容 -->
+        <div class="content-ja" lang="ja">
+            <header class="header">
+                <h1>日本生活ナビ</h1>
+                <p>日本での生活をサポートする総合ナビゲーション</p>
+            </header>
+            <!-- 日文版内容待补充 -->
+        </div>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // 隐藏所有语言内容
+            document.querySelectorAll('[lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // 显示选中语言内容
+            document.querySelectorAll(`[lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+
+            // 更新按钮状态
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.language-btn[onclick*="${lang}"]`).classList.add('active');
+        }
+
+        // 初始化显示中文
+        document.querySelector('[lang="zh"]').classList.add('active');
+    </script>
+</body>
+</html>
